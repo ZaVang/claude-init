@@ -19,7 +19,7 @@ One-click project initialization with CLAUDE.md templates, directory structure, 
 
 ```bash
 # Add this repo as a marketplace
-/plugin marketplace add ZaVang/claude-init
+/plugin marketplace add ZaVang/zavang-plugins
 
 # Install the plugin
 /plugin install claude-init@zavang-plugins
@@ -29,7 +29,7 @@ One-click project initialization with CLAUDE.md templates, directory structure, 
 
 ```bash
 # Clone the entire marketplace
-git clone https://github.com/ZaVang/claude-init.git ~/.claude/plugins/zavang-plugins
+git clone https://github.com/ZaVang/zavang-plugins.git ~/.claude/plugins/zavang-plugins
 
 # Restart Claude Code to load the plugins
 ```
@@ -38,7 +38,7 @@ git clone https://github.com/ZaVang/claude-init.git ~/.claude/plugins/zavang-plu
 
 ```bash
 # Clone the repository
-git clone https://github.com/ZaVang/claude-init.git
+git clone https://github.com/ZaVang/zavang-plugins.git
 
 # Start Claude Code with the marketplace
 claude --plugin-dir /path/to/claude-init
