@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "claude-init",
-      "source": ".",
+      "source": "./plugins/claude-init",
       "description": "One-click project initialization with CLAUDE.md templates, directory structure, and built-in agents",
       "version": "1.0.0",
       "author": {

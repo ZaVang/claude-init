@@ -1,9 +1,13 @@
-# claude-init
+# ZaVang Claude Plugins
 
-A Claude Code plugin for one-click project initialization with standardized structure, development conventions, and built-in agents.
+A Claude Code plugin marketplace for project initialization, code review, testing, and more.
 
-## Features
+## Available Plugins
 
+### claude-init
+One-click project initialization with CLAUDE.md templates, directory structure, and built-in agents.
+
+**Features:**
 - **Project Initialization**: Generate CLAUDE.md, directory structure, and language-specific configurations
 - **Built-in Agents**: Code review, test generation, documentation, architecture analysis, debugging
 - **Auto-formatting Hook**: Python files auto-formatted with black + isort
@@ -11,9 +15,33 @@ A Claude Code plugin for one-click project initialization with standardized stru
 
 ## Installation
 
+### Option 1: Plugin Marketplace (Recommended)
+
 ```bash
-# From GitHub
-/plugin install github:ZaVang/claude-init
+# Add this repo as a marketplace
+/plugin marketplace add ZaVang/claude-init
+
+# Install the plugin
+/plugin install claude-init@zavang-plugins
+```
+
+### Option 2: Clone to plugins directory
+
+```bash
+# Clone the entire marketplace
+git clone https://github.com/ZaVang/claude-init.git ~/.claude/plugins/zavang-plugins
+
+# Restart Claude Code to load the plugins
+```
+
+### Option 3: Using --plugin-dir (For development)
+
+```bash
+# Clone the repository
+git clone https://github.com/ZaVang/claude-init.git
+
+# Start Claude Code with the marketplace
+claude --plugin-dir /path/to/claude-init
 ```
 
 ## Quick Start
@@ -110,24 +138,27 @@ For Python formatting hook:
 pip install black isort
 ```
 
-## Plugin Structure
+## Marketplace Structure
 
 ```
 claude-init/
 ├── .claude-plugin/
-│   └── plugin.json         # Plugin manifest
-├── skills/
-│   └── init-project/
-│       ├── SKILL.md        # Main initialization skill
-│       └── templates/      # Project templates
-├── agents/
-│   ├── code-reviewer/
-│   ├── test-writer/
-│   ├── doc-writer/
-│   ├── architect/
-│   └── debugger/
-├── hooks/
-│   └── hooks.json          # Auto-formatting hook
+│   └── marketplace.json    # Marketplace manifest
+├── plugins/
+│   └── claude-init/        # claude-init plugin
+│       ├── .claude-plugin/
+│       │   └── plugin.json
+│       ├── skills/
+│       │   └── init-project/
+│       │       └── SKILL.md
+│       ├── agents/
+│       │   ├── code-reviewer/
+│       │   ├── test-writer/
+│       │   ├── doc-writer/
+│       │   ├── architect/
+│       │   └── debugger/
+│       └── hooks/
+│           └── hooks.json
 └── README.md
 ```
 
