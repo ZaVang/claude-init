@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [[ \"$FILE\" == *.py ]]; then python -m black \"$FILE\" && python -m isort \"$FILE\"; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

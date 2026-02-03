@@ -1,0 +1,11 @@
+{
+  "name": "claude-init",
+  "description": "One-click project initialization with CLAUDE.md templates, directory structure, and built-in agents for code review, testing, and documentation",
+  "version": "1.0.0",
+  "author": {
+    "name": "ZaVang"
+  },
+  "homepage": "https://github.com/ZaVang/claude-init",
+  "repository": "https://github.com/ZaVang/claude-init",
+  "license": "MIT"
+}
