@@ -1,48 +1,50 @@
 # {{PROJECT_NAME}}
 
-## 任务规划原则
+## Task Planning
 
-1. **Think Deeper First** - 开始任务前充分思考，复杂任务必须先分解为 3+ 个步骤
-2. **Implementation Plan** - 复杂任务写入 `docs/implementation_plan.md`，与用户确认后再执行
-3. **渐进式开发** - 遵循最小改动原则，代码越精简越好
+1. **Think Deeper First** - Think thoroughly before starting. Break complex tasks into 3+ steps.
+2. **Implementation Plan** - Write plans to `docs/implementation_plan.md` for complex tasks, confirm with user before executing.
+3. **Minimal Changes** - Follow the principle of least change. Keep code concise.
 
-## 代码实现原则
+## Implementation Principles
 
-### 1. 架构优先
-- **先搭框架**: 在实现具体功能前，先设计好整体架构和模块划分
-- **模块解耦**: 功能模块分离到独立文件，不要堆积在一个文件里
-- **单一职责**: 每个模块/文件只负责一个功能域
+### 1. Architecture First
+- **Design before coding**: Plan overall architecture and module structure before implementing features.
+- **Decouple modules**: Separate functionality into independent files. Don't pile everything into one file.
+- **Single responsibility**: Each module/file should handle only one functional domain.
 
-### 2. 骨架先行
-- **先写骨架**: 先实现函数签名和类结构，细节用 TODO 或 docstring 占位
-- **用户确认**: 骨架完成后等用户确认再实现具体逻辑
-- **示例**:
+### 2. Skeleton First
+- **Write skeleton first**: Implement function signatures and class structures first. Use TODO or docstring placeholders for details.
+- **Confirm before implementing**: Wait for user confirmation after skeleton is complete before implementing logic.
+- **Example**:
   ```python
   def process_data(data: InputSchema) -> OutputSchema:
-      """处理输入数据并返回结果。
+      """Process input data and return result.
 
-      TODO: 实现数据处理逻辑
+      TODO: Implement data processing logic
       """
       raise NotImplementedError
   ```
 
-### 3. Schema 优先（Python）
-- 实现功能前先用 Pydantic 定义数据模型
-- Schema 统一放在 `src/schemas/` 目录
-- 使用 Pydantic 类而非 dataclass
+### 3. Schema First
+- Define data models before implementing features.
+- Place schemas in `src/schemas/` directory.
+- Language-specific:
+  - **Python**: Use Pydantic models (not dataclass)
+  - **TypeScript**: Use interfaces or Zod schemas
 
-## 项目结构
+## Project Structure
 
 ```
 {{PROJECT_STRUCTURE}}
 ```
 
-## 快速命令
+## Quick Commands
 
 ```bash
-# 运行测试
+# Run tests
 {{TEST_COMMAND}}
 
-# 启动开发
+# Start development
 {{DEV_COMMAND}}
 ```
