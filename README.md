@@ -4,6 +4,16 @@ A Claude Code plugin marketplace for project initialization, code review, testin
 
 ## Available Plugins
 
+### claude-autoupdate
+One-click Claude Code upgrade with automatic changelog summarization. Detects your current version, upgrades to latest, fetches every release note in between, and produces a structured report with deep-dive explanations of core new features.
+
+**Features:**
+- **One-click Upgrade**: Detects current version, fetches latest from npm, and upgrades in one command
+- **Version-by-Version Changelog**: Summarizes every release between old and new version
+- **Core Feature Deep-Dives**: Detailed explanations (What / Why / How / Impact) for major features
+- **Saved Report**: Writes a Markdown report to `~/.claude/` for future reference
+- **Smart Fallbacks**: Falls back to web search if GitHub releases are unavailable
+
 ### claude-init
 One-click project initialization with CLAUDE.md templates, directory structure, and built-in agents.
 
@@ -81,6 +91,14 @@ myapp/
 
 ## Available Commands
 
+### claude-autoupdate
+
+| Command | Description |
+|---------|-------------|
+| `/claude-autoupdate:autoupdate` | Upgrade Claude Code to latest version and generate a full changelog report |
+
+### claude-init
+
 | Command | Description |
 |---------|-------------|
 | `/claude-init:init-project` | Initialize a new project with structure and configs |
@@ -141,13 +159,16 @@ pip install black isort
 ## Marketplace Structure
 
 ```
-claude-init/
-├── .claude-plugin/
-│   └── marketplace.json    # Marketplace manifest
+zavang-plugins/
 ├── plugins/
-│   └── claude-init/        # claude-init plugin
-│       ├── .claude-plugin/
-│       │   └── plugin.json
+│   ├── claude-autoupdate/      # claude-autoupdate plugin
+│   │   ├── skills/
+│   │   │   └── autoupdate/
+│   │   │       └── SKILL.md
+│   │   └── agents/
+│   │       └── changelog-analyst/
+│   │           └── AGENT.md
+│   └── claude-init/            # claude-init plugin
 │       ├── skills/
 │       │   └── init-project/
 │       │       └── SKILL.md
